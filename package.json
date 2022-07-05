@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "cd client && npm start"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.3.0"
+  }
+}
