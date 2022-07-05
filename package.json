@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "cd client && npm start",
-    "build": "cd client/ && npm install && npm build"
+    "build": "cd client && npm install"
   },
   "dependencies": {
     "react-router-dom": "^6.3.0"
