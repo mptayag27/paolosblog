@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import axios from "axios";
 import {
   Typography,
   CardMedia,
@@ -20,7 +22,9 @@ import useStyles from "./styles";
 const BlogPosts = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const blogPostStyles = useStyles();
-  const[updateMode, setUpdateMode] = React.useState(false);
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [updateMode, setUpdateMode] = useState(false);
 
   return (
     <>
@@ -51,7 +55,7 @@ const BlogPosts = ({ post, setCurrentId }) => {
           </Typography>
         </div>
         {
-          updateMode ? ( <input type="text" value ={post.title}/> ) : (
+          updateMode ? ( <input type="text" value ={post.title} className="singlePostTitleInput" /> ) : (
         <Typography
           className={blogPostStyles.titleSection}
           gutterBottom
@@ -62,9 +66,12 @@ const BlogPosts = ({ post, setCurrentId }) => {
         </Typography>
         )}
         <CardContent>
+         {
+         updateMode ? ( <input type="text" value ={post.description}/> ) : (
           <Typography variant="body2" color="textSecondary" component="p">
             {post.description}
           </Typography>
+         )}
         </CardContent>
         <CardActions className={blogPostStyles.cardActions}>
           <Button
