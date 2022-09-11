@@ -32,7 +32,7 @@ function App() {
             height="100"
           />
           <Typography className={appStyles.title} variant="h2" align="center">
-            Mern awesome blog
+            Paolo's blog!
           </Typography>
         </AppBar>
         <Grow in>
